@@ -8,6 +8,12 @@ iTerm2 component for status bar which shows number of docker containers.
 
 ## Install
 
+### Clone this Repository
+
+```
+$ git clone git@github.com:koh-sh/iterm2-container-counter.git
+```
+
 ### Create Directory for Auto Launch
 
 ```
