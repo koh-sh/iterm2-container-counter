@@ -28,7 +28,7 @@ $ mkdir -p ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
 ### Manually create new python script
 
 Scripts -> Manage -> New Python Script -> Full Environment -> Long-Running Daemon  
-Save as "container-counter" under ` ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch`  
+Save as `container-counter` under ` ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch`  
 
 \* Enable Python API and install iTerm2's Python Runtime if requested.  
 
