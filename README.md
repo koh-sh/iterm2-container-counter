@@ -1,7 +1,8 @@
 # iterm2-container-counter
 iTerm2 component for status bar which shows number of docker containers.  
 
-[](imgs/statusbar.png)  
+![](imgs/statusbar.png)  
+
 🐳 -> Running Container  
 ⚫ -> Stopped Container  
 
