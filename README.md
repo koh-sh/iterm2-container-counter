@@ -6,6 +6,11 @@ iTerm2 component for status bar which shows number of docker containers.
 🐳 -> Running Container  
 ⚫ -> Stopped Container  
 
+## Prerequisites
+
+- iTerm2 (>=3.3) 
+- Docker Desktop for Mac
+
 ## Install
 
 ### Clone this Repository
