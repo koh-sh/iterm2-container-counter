@@ -41,9 +41,9 @@ $ ln -s /path/to/iterm2-container-counter/container-counter.py ~/Library/Applica
 
 ### Install dependency
 
-Scripts -> Manage -> Manage Dependencies...  
-Choose `AutoLaunch/container-counter` and press `Add`  
-Type `docker` then install.
+```
+$ ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/container-counter/iterm2env/versions/3.7.2/bin/pip3 install -r /path/to/iterm2-container-counter/requirements.txt
+```
 
 ### Relaunch iTerm2
 
