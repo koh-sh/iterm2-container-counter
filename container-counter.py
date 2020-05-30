@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import docker
+import subprocess
 import iterm2
 
 
@@ -20,10 +20,17 @@ async def main(connection):
         stoped = '⚫ '
 
         try:
-            client = docker.from_env()
-            all_num = len(client.containers.list(all))
-            run_num = len(client.containers.list())
-            return (whale * run_num) + (stoped * (all_num - run_num))
+            cmd = subprocess.run(["/usr/local/bin/docker", "container", "ls", "-a"],
+                                 encoding='utf-8',
+                                 stdout=subprocess.PIPE,
+                                 stderr=subprocess.STDOUT)
+            if cmd.returncode != 0:
+                return "Cannot connect to docker daemon"
+            else:
+                containers = cmd.stdout.split("\n")[1:-1]
+                all_num = len(containers)
+                run_num = len([1 for x in containers if x.count("Up ") > 0])
+                return (whale * run_num) + (stoped * (all_num - run_num))
         except Exception:
             return "Cannot connect to docker daemon"
 

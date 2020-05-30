@@ -19,31 +19,13 @@ iTerm2 component for status bar which shows number of docker containers.
 $ git clone git@github.com:koh-sh/iterm2-container-counter.git
 ```
 
-### Create Directory for Auto Launch
+### Run install script
 
 ```
-$ mkdir -p ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
+./install.sh
 ```
 
-### Manually create new python script
-
-Scripts -> Manage -> New Python Script -> Full Environment -> Long-Running Daemon  
-Save as `container-counter` under ` ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch`  
-
-\* Enable Python API and install iTerm2's Python Runtime if requested.  
-
-### Replace example script.  
-
-```
-$ rm ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/container-counter/container-counter/container-counter.py
-$ ln -s /path/to/iterm2-container-counter/container-counter.py ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/container-counter/container-counter/container-counter.py
-```
-
-### Install dependency
-
-```
-$ ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/container-counter/iterm2env/versions/3.7.2/bin/pip3 install -r /path/to/iterm2-container-counter/requirements.txt
-```
+install.sh creates symbolic link for the script.
 
 ### Relaunch iTerm2
 
