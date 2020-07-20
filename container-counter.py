@@ -18,6 +18,7 @@ async def main(connection):
     async def container_counter(knobs):
         whale = '🐳 '
         stoped = '⚫ '
+        switch_view = 10
 
         try:
             cmd = subprocess.run(["/usr/local/bin/docker", "container", "ls", "-a"],
@@ -30,7 +31,14 @@ async def main(connection):
                 containers = cmd.stdout.split("\n")[1:-1]
                 all_num = len(containers)
                 run_num = len([1 for x in containers if x.count("Up ") > 0])
-                return (whale * run_num) + (stoped * (all_num - run_num))
+                stp_num = all_num - run_num
+                if all_num <= switch_view:
+                    return (whale * run_num) + (stoped * stp_num)
+                else:
+                    return "{0} x {1}  | {2} x {3}".format(whale,
+                                                           str(run_num),
+                                                           stoped,
+                                                           str(stp_num))
         except Exception:
             return "Cannot connect to docker daemon"
 
