@@ -17,7 +17,7 @@ async def main(connection):
     @iterm2.StatusBarRPC
     async def container_counter(knobs):
         whale = '🐳 '
-        stoped = '⚫ '
+        stopped = '⚫ '
         switch_view = 10
 
         try:
@@ -33,11 +33,11 @@ async def main(connection):
                 run_num = len([1 for x in containers if x.count("Up ") > 0])
                 stp_num = all_num - run_num
                 if all_num <= switch_view:
-                    return (whale * run_num) + (stoped * stp_num)
+                    return (whale * run_num) + (stopped * stp_num)
                 else:
                     return "{0} x {1}  | {2} x {3}".format(whale,
                                                            str(run_num),
-                                                           stoped,
+                                                           stopped,
                                                            str(stp_num))
         except Exception:
             return "Cannot connect to docker daemon"
